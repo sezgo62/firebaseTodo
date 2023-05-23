@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
 
+
   todos$: Observable<any>; // In unserer todos Variable haben wir Observable, was bedeutet dass unsere Variable observiert wird, 
   //und wenn es Änderungen gibt werden wir darüber in Kenntnis gesetzt. Das any bezieht sich auf einen Datentypen, wie string oder number.
   // In diesem Fall haben wir any, was für irgendeins stehen könnte. Das Dolarzeichen nach unserer Variable ist ein Merkmal für eine Variable die sich ändert.
