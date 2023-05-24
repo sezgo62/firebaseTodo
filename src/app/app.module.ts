@@ -28,6 +28,8 @@ export class AppModule { }
 */
 
 
+
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -63,10 +65,12 @@ const app = initializeApp(firebaseConfig);
     AngularFirestoreModule
     ],
   providers: [
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore())
+    
   ],
   bootstrap: [AppComponent]
 })
