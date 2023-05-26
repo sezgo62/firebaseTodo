@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sezgintodo62": {
+      "hosting": {
+        "firebase-todolist": [
+          "sezgintodo62"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sezgintodo62"
+  }
+}

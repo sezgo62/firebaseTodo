@@ -1,35 +1,3 @@
-/*import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    provideFirebaseApp(() => initializeApp()),
-    provideAuth(() => getAuth()),
-    provideDatabase(( => getDatabase()),
-    provideFirestore(() => getFirestore()),
-  ],
-  providers: [
-    
-  ],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-*/
-
-
-
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -39,21 +7,25 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+import { AngularFireModule } from '@angular/fire/compat';
+
+
 //import { environment } from '../environments/environment';
 
 
+const environment = {
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBRq0SDl0dD4sW5h0nRnkwgEZc9ZEQxaqk",
-  authDomain: "sezgintodo62.firebaseapp.com",
-  projectId: "sezgintodo62",
-  storageBucket: "sezgintodo62.appspot.com",
-  messagingSenderId: "42286061389",
-  appId: "1:42286061389:web:e13398e7aa4dcc218b0904"
+  production: false,
+  firebase: {
+    projectId: 'sezgintodo62',
+    appId: '1:42286061389:web:e13398e7aa4dcc218b0904',
+    databaseURL: 'https://sezgintodo62-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'sezgintodo62.appspot.com',
+    apiKey: 'AIzaSyBRq0SDl0dD4sW5h0nRnkwgEZc9ZEQxaqk',
+    authDomain: 'sezgintodo62.firebaseapp.com',
+    messagingSenderId: '42286061389',
+  }
 };
-
-const app = initializeApp(firebaseConfig);
 
 
 @NgModule({
@@ -63,16 +35,18 @@ const app = initializeApp(firebaseConfig);
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFirestoreModule
+    AngularFireModule.initializeApp(environment.firebase),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
     ],
   providers: [
     
-    provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase()),
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore())
+    
     
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }
