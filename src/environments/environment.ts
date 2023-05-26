@@ -1,11 +1,9 @@
 export const firebaseConfig = {
-        apiKey: "AIzaSyBiqNvNmtZ5Q7XtkUvaxSL2t5u0j1QBPCM",
-        authDomain: "sgtodolist-3d985.firebaseapp.com",
-        projectId: "sgtodolist-3d985",
-        storageBucket: "sgtodolist-3d985.appspot.com",
-        messagingSenderId: "538006938300",
-        appId: "1:538006938300:web:43cda0c5476b55285866b9",
-        measurementId: "G-GHQ6ZFYLCS"
-      };
-
-
+    apiKey: "AIzaSyBRq0SDl0dD4sW5h0nRnkwgEZc9ZEQxaqk",
+    authDomain: "sezgintodo62.firebaseapp.com",
+    databaseURL: "https://sezgintodo62-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "sezgintodo62",
+    storageBucket: "sezgintodo62.appspot.com",
+    messagingSenderId: "42286061389",
+    appId: "1:42286061389:web:e13398e7aa4dcc218b0904"
+  };
