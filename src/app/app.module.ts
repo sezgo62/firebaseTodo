@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
@@ -35,7 +35,7 @@ const environment = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule,
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
@@ -43,7 +43,7 @@ const environment = {
     ],
   providers: [
     
-    
+
     
   ],
   bootstrap: [AppComponent]
