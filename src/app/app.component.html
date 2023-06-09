@@ -1,1 +1,17 @@
+<div class="mainContainer">
+
 <h1>Todo-List</h1>
+
+<!---<Ul>
+    <li  *ngFor="let todo of todos$ | async">{{ todo['todo'] }}</li>
+</Ul>--->
+
+<input [(ngModel)]="fs.todotext" type="text" placeholder="New todo here">
+<input [(ngModel)]="fs.tododescription" type="text" placeholder="New todo here">
+
+<button (click)="fs.addTodo()">Hinzufügen</button>
+
+<app-notes></app-notes>
+
+
+</div>

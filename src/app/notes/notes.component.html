@@ -1,0 +1,13 @@
+<div class="noteMainContainer" *ngFor="let todo of fs.todos$ | async">
+
+    <div class="titleContainer">
+    <span class="title">{{todo['todo']}}</span>
+</div>
+
+    <div class="noteTextContainer">
+        {{todo['description']}}
+    </div>
+
+    <button (click)="fs.deleteNotice()">X</button>
+
+</div>

@@ -1,22 +1,16 @@
-import { Component } from '@angular/core';
-
+import { Injectable } from '@angular/core';
 import { inject } from '@angular/core';
 import { Firestore, collectionData, collection, doc, setDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { ScriptService } from './script.service';
+import { getFirestore, deleteDoc } from "firebase/firestore";
 
-
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
+export class ScriptService {
 
-  constructor(public fs:ScriptService) {}
-
-  /*todotext = '';
+ todotext = '';
+ tododescription = '';
 
   todos$: Observable<any>; // In unserer todos Variable haben wir Observable, was bedeutet dass unsere Variable observiert wird, 
   //und wenn es Änderungen gibt werden wir darüber in Kenntnis gesetzt. Das any bezieht sich auf einen Datentypen, wie string oder number.
@@ -31,12 +25,11 @@ export class AppComponent {
                                                                 //In diesem Fall die collection 'todos'.
     
     this.todos$ = collectionData(itemCollection); // Aus dieser collection holen wir uns die ganzen Daten.
-console.log('Neue todos');
+
 
     this.todos$.subscribe( (newTodos) => {
       console.log('Neue todos sind', newTodos);
-      this.todos$ = newTodos;
-      debugger;
+      //this.todos = newTodos;
       });
       console.log(this.todos$);
   }
@@ -44,10 +37,15 @@ console.log('Neue todos');
 
   addTodo(){
     const itemCollection = collection(this.firestore, 'todos');//Wir holen uns zuerst unsere Collection
-    setDoc(doc(itemCollection), 
-    {
-      todo: this.todotext
+    setDoc(doc(itemCollection), {
+      "todo": this.todotext,
+      "description": this.tododescription
     });//Mit dieser Zeile fügen wir dem collection etwas neues hinzu
-  }*/
-  
+  }
+
+  deleteNotice() {
+    //const itemCollection = collection(this.firestore, 'todos');
+    const db = getFirestore();
+  }
+
 }

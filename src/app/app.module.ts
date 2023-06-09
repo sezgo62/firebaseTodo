@@ -8,6 +8,8 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
+import { FormsModule } from '@angular/forms';
+import { NotesComponent } from './notes/notes.component';
 
 
 //import { environment } from '../environments/environment';
@@ -30,12 +32,14 @@ const environment = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule,
+    FormsModule,
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
