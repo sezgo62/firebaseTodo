@@ -1,4 +1,4 @@
-<div class="noteMainContainer" *ngFor="let todo of fs.todos$ | async">
+<div class="noteMainContainer" *ngFor="let todo of fs.todos$ | async; let i = index">
 
     <div class="titleContainer">
     <span class="title">{{todo['todo']}}</span>
@@ -8,6 +8,6 @@
         {{todo['description']}}
     </div>
 
-    <button (click)="fs.deleteNotice()">X</button>
+    <button (click)="fs.deleteNotice(i)">X</button>
 
 </div>

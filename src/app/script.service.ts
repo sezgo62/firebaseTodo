@@ -3,6 +3,8 @@ import { inject } from '@angular/core';
 import { Firestore, collectionData, collection, doc, setDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { getFirestore, deleteDoc } from "firebase/firestore";
+import { initializeApp } from '@angular/fire/app';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -43,9 +45,13 @@ export class ScriptService {
     });//Mit dieser Zeile fügen wir dem collection etwas neues hinzu
   }
 
-  deleteNotice() {
+  deleteNotice(i) {
+    const app = initializeApp(environment.firebase);  
     //const itemCollection = collection(this.firestore, 'todos');
-    const db = getFirestore();
-  }
 
+    const db = getFirestore(app);
+debugger;
+    deleteDoc(doc(db, 'todos', i));
+
+  }
 }

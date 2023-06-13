@@ -12,10 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { NotesComponent } from './notes/notes.component';
 
 
-//import { environment } from '../environments/environment';
+import { environment } from '../environments/environment';
 
 
-const environment = {
+/*const environment = {
 
   production: false,
   firebase: {
@@ -27,7 +27,7 @@ const environment = {
     authDomain: 'sezgintodo62.firebaseapp.com',
     messagingSenderId: '42286061389',
   }
-};
+};*/
 
 
 @NgModule({
