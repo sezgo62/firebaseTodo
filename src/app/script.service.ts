@@ -45,13 +45,9 @@ export class ScriptService {
     });//Mit dieser Zeile fügen wir dem collection etwas neues hinzu
   }
 
-  deleteNotice(i) {
-    const app = initializeApp(environment.firebase);  
-    //const itemCollection = collection(this.firestore, 'todos');
-
-    const db = getFirestore(app);
+  deleteNotice(note) {
+    const itemCollection = collection(this.firestore, 'todos');
 debugger;
-    deleteDoc(doc(db, 'todos', i));
-
+    deleteDoc(doc(itemCollection, note));
   }
 }
