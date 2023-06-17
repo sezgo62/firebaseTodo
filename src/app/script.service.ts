@@ -35,7 +35,6 @@ newTodos;
     this.todos$.subscribe( (newTodos) => {
       //console.log('Neue todos sind', newTodos);
       this.newTodos = newTodos;
-      debugger;
       //this.todos = newTodos;
       });
       //console.log(this.todos$);
@@ -45,15 +44,12 @@ newTodos;
 
   
   async ngOnInit() {
-    debugger;
     const itemCollection = collection(this.firestore, 'todos'); //Hier wollen wir die gesammte collection(Sammlung) haben die wir uns im Firestore eingerichtet haben. 
                                                                 //In diesem Fall die collection 'todos'.
     const q = query(itemCollection);
     const querySnapshot = await getDocs(q);
 
-    debugger;
     console.log(querySnapshot);
-    debugger;
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
       console.log(doc.id, " => ", doc.data());
@@ -69,12 +65,12 @@ newTodos;
       "description": this.tododescription
     });//Mit dieser Zeile fügen wir dem collection etwas neues hinzu
   }
-
-  deleteNotice(note) {
+  
+  deleteNotice(i) {
     const itemCollection = collection(this.firestore, 'todos');
     debugger;
     console.log('Neue todos sind', this.newTodos);
-    deleteDoc(doc(itemCollection, note));
-    
+    let todoId = this.newTodos[i];
+    deleteDoc(doc(itemCollection, todoId));
   }
 }
