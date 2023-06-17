@@ -14,7 +14,8 @@ import { ScriptService } from './script.service';
 })
 export class AppComponent {
 
-  constructor(public fs:ScriptService) {}
+  constructor(public fs:ScriptService) {
+  }
 
   /*todotext = '';
 

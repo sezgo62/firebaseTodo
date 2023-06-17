@@ -4,6 +4,8 @@ import { AppModule } from './app/app.module';
 import { initializeApp } from '@angular/fire/app';
 //import { firebaseConfig } from './environments/environment.development';
 
+
+
 /*const firebaseConfig = {
   apiKey: "AIzaSyBRq0SDl0dD4sW5h0nRnkwgEZc9ZEQxaqk",
   authDomain: "sezgintodo62.firebaseapp.com",
