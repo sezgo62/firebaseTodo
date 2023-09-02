@@ -5,12 +5,10 @@
 <!---<Ul>
     <li  *ngFor="let todo of todos$ | async">{{ todo['todo'] }}</li>
 </Ul>--->
-
-<input [(ngModel)]="fs.todotext" type="text" placeholder="New todo here">
-<input [(ngModel)]="fs.tododescription" type="text" placeholder="New todo here">
+<input [(ngModel)]="fs.todotext" type="text" placeholder="New title here" required>
+<input [(ngModel)]="fs.tododescription" type="text" placeholder="New description here" required>
 
 <button (click)="fs.addTodo()">Hinzufügen</button>
-
 <app-notes></app-notes>
 
 

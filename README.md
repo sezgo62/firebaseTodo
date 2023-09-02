@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
+/////////////////////////////////////////////DEFINITION ZUM NOTIZBLOCK-CODE/////////////////////////////////////////////////////////////////////
+
+--Zur NgOnInit Funktion:
+1. Wir holen uns zuerst die Referenz zur collection in Firestore. z.B. (const itemCollection = collection(this.firestore, 'todos');)
+2. Wir stellen eine Abfrage an die Itemcollection. z.B. (const q = query(itemCollection);)
+3. Wir lagern jedes document in der Variable QuerySnapshot. z-B. (querySnapshot = await getDocs(q);)
+4. Wir füllen unser dataArray um somit alle Objekte aus dem document reinzulagern und somit   
